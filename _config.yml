@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
+title: Matt Shen's Blog
+subtitle: 
+description: Writings about my software engineering philosophy
+author: Matt Shen <lovelywib@gmail.com>
 language: en
 timezone: Australia/Sydney
 
