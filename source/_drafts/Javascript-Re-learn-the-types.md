@@ -1,10 +1,10 @@
 ---
 title: Javascript Re-learn - the types
 tags:
-  - Test
-  - Blog
+  - Javascript
+  - Type
 categories:
-  - Hexo
+  - Programming Languages
 comments: true
 date: 2017-03-20 10:02:00
 ---
