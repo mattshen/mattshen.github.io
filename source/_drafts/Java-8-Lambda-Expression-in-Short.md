@@ -17,20 +17,20 @@ Simply speaking, Java 8 Lambda expressions are just anonymous classes which have
 ```Java
 //Anonymous class
 Collections.sort(names, new Comparator<String>() {
-    @Override
-    public int compare(String o1, String o2) {
-  return o1.compareTo(o2);
-    }
+  @Override
+  public int compare(String o1, String o2) {
+    return o1.compareTo(o2);
+  }
 });
 
 //Java 8 Lambda expression in complete 
 Collections.sort(names, (String o1, String o2) -> {
-    return o1.compareTo(o2);
+  return o1.compareTo(o2);
 });
 
 //Parameter type can be omitted, because the types can be inferred
 Collections.sort(names, (o1, o2) -> {
-return o1.compareTo(o2);
+  return o1.compareTo(o2);
 });
 
 //return can be omitted for one line lambda
@@ -45,13 +45,13 @@ With anonymous classes, it is possible to define a new utility method, e.g.
 ```Java
 //Anonymous class
 Collections.sort(names, new Comparator<String>() {
-    @Override
-    public int compare(String o1, String o2) {
-  return o1.compareTo(o2);
-    }
-    public Comparator<String> reversed() {
-        return Collections.reverseOrder(this);
-    }
+  @Override
+  public int compare(String o1, String o2) {
+    return o1.compareTo(o2);
+  }
+  public Comparator<String> reversed() {
+    return Collections.reverseOrder(this);
+  }
 });
 ```
 
