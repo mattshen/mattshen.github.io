@@ -28,7 +28,6 @@ After much pain with the C, most programming language designers have added `Stri
 ## Boolean
 `Boolean` is not necessary to be a primitive, e.g. C. But defining a Boolean type has been well accepted. It makes the readability of the program better. see following negative example: 
 
-Example 1
 ```C
 int a = 0; 
 
