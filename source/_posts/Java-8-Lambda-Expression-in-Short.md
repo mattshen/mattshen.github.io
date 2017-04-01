@@ -10,6 +10,7 @@ comments: true
 date: 2016-05-08 00:00:00
 ---
 
+
 # Anonymous class in a new form
 
 Simply speaking, Java 8 Lambda expressions are just anonymous classes which have occasionally made their appearances in the previous Java versions. But now they appears in much more concise forms with the new syntactic level support. Here are a couple of examples how concise we can archive in Java coding with the help of lambda expression.
