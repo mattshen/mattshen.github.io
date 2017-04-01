@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/5 | /home/mattshen</title>
+    <title>Javascript the types (Nouns and Verbs) | /home/mattshen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Writings about my software engineering philosophy">
-<meta property="og:type" content="website">
-<meta property="og:title" content="/home/mattshen">
-<meta property="og:url" content="https://mattshen.mazeforce.com/archives/2016/05/index.html">
+    <meta name="description" content="The reasonThis is the first post of a series of Javascript re-learn posts. Why am I writing it when there are some many similar stuff out on Internet? If there has to be a reason, the first one would">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript the types (Nouns and Verbs)">
+<meta property="og:url" content="https://mattshen.mazeforce.com/2017/03/20/Javascript-Re-learn-the-types/index.html">
 <meta property="og:site_name" content="/home/mattshen">
-<meta property="og:description" content="Writings about my software engineering philosophy">
+<meta property="og:description" content="The reasonThis is the first post of a series of Javascript re-learn posts. Why am I writing it when there are some many similar stuff out on Internet? If there has to be a reason, the first one would">
+<meta property="og:updated_time" content="2017-04-01T11:30:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="/home/mattshen">
-<meta name="twitter:description" content="Writings about my software engineering philosophy">
+<meta name="twitter:title" content="Javascript the types (Nouns and Verbs)">
+<meta name="twitter:description" content="The reasonThis is the first post of a series of Javascript re-learn posts. Why am I writing it when there are some many similar stuff out on Internet? If there has to be a reason, the first one would">
     
 
     
@@ -199,50 +200,172 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-Javascript-Re-learn-the-types" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/05/08/Java-8-Lambda-Expression-in-Short/">Java 8 Lambda Expression in Short</a>
+        <h1 class="article-title" itemprop="name">
+            Javascript the types (Nouns and Verbs)
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/05/08/Java-8-Lambda-Expression-in-Short/">
-            <time datetime="2016-05-07T14:00:00.000Z" itemprop="datePublished">2016-05-08</time>
+        <a href="/2017/03/20/Javascript-Re-learn-the-types/">
+            <time datetime="2017-03-19T23:02:00.000Z" itemprop="datePublished">2017-03-20</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Programming-Languages/">Programming Languages</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Functional/">Functional</a>, <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/Lambda/">Lambda</a>
+        <a class="tag-link" href="/tags/Javascript/">Javascript</a>, <a class="tag-link" href="/tags/Type/">Type</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="The-reason"><a href="#The-reason" class="headerlink" title="The reason"></a>The reason</h1><p>This is the first post of a series of Javascript re-learn posts. Why am I writing it when there are some many similar stuff out on Internet? If there has to be a reason, the first one would be to review my knowledge on Javascript and hopefully I can get some level of “学而时习之,可以为师矣”.</p>
+<h1 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h1><p>One of the best ways to learn a programming language is to think like I’m going to design it. </p>
+<p>Just like the natural languages, first we need to properly express the things in nouns, like apple, orange, etc. As an advanced programming language, Javascript’s types are properly designed, not too simple not too complex. </p>
+<p>It starts with <code>Number</code>, then <code>String</code> and <code>Boolean</code>. Then a little more complex, <code>Object</code> and <code>Function</code>. And that’s all, not too overwhelming for beginners to start with. </p>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>Rather that some other languages, e.g. Java, with which the programmer has to remember <code>Integer</code>, <code>Long</code>, <code>Float</code>, <code>Double</code>, <code>BigDecimal</code> and <code>BigInteger</code>, etc, Javascript relieves the beginners from this burden. All numbers start with Type Number. </p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>After much pain with C, most programming language designers have added <code>String</code> as a primitive type ever since, which is proved to be the very right thing to do. </p>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p><code>Boolean</code> is not necessary to be a primitive, e.g. C. But defining a Boolean type has been well accepted. It makes the readability of the program better. see following negative example: </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">0</span>; </div><div class="line"></div><div class="line"><span class="comment">//Then change a to some other value</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (a) &#123; <span class="comment">// do something if expression "a" is true</span></div><div class="line">  <span class="comment">//do something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>To be honest, after so many years, I still have to google to find out whether <code>0</code> is true or <code>non-0</code> is true. </p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>When Javascript is designed, OOP is already well accepted. So the author adopted some OOP into the language. But probably he doesn’t like the complexities of OOP – classes, interfaces, abstract classes, inheritance, etc. So he just pick one very simple concept, the <code>Object</code>, to express all the different real life things, just like he picked only <code>Number</code> to express all the numbers. </p>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>Imagine (脑洞大开) the first human beings who invented the word “apple”, then they can use it communicate with their peers. But soon after that, they would have the need to express “pick” and “eat”.</p>
+<p>In the programming languages, “pick” and “eat” are functions. Once programmers have objects, they would need functions to operate on the objects. Unlike some languages like Java (sorry), Javascript’s functions can work independently. They are first-class citizens just like objects. This little difference opens the door for Javascript to become a proper player in the functional programming area. </p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="https://mattshen.mazeforce.com/2017/03/20/Javascript-Re-learn-the-types/" data-id="cj0z6fp0h0000qc1pn3ixybhs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://mattshen.mazeforce.com/2017/03/20/Javascript-Re-learn-the-types/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://mattshen.mazeforce.com/2017/03/20/Javascript-Re-learn-the-types/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/05/08/Java-8-Lambda-Expression-in-Short/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Java 8 Lambda Expression in Short</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -365,11 +488,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'https://mattshen.mazeforce.com/2017/03/20/Javascript-Re-learn-the-types/';
+        
+        this.page.identifier = 'Javascript-Re-learn-the-types';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'personal-blog-7' + '.disqus.com/count.js';
+        s.src = '//' + 'personal-blog-7' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
