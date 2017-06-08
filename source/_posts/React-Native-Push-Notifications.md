@@ -69,6 +69,7 @@ In case you work for a company and you don't have the permission creating `Apple
 ```JSON
 {"aps":{"content-available":1}}
 ```
+See more details [here](https://medium.com/posts-from-emmerge/ios-push-notification-background-fetch-demystified-7090358bb66e)
 
 **Android**. Notification are even fired when app is in foreground by default. You probably want to write your own logic to block foreground firing. Here is what I did (with `react-native-notifications`): 
 ```Java
