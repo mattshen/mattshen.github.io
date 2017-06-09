@@ -12,7 +12,7 @@ Grown in the countryside in Huzhou, Zhejiang, I had quite a deep play on everyda
 [westlake]: hrc_hangzhou_west_lake_lotus_and_boat.jpg "West Lake, Hangzhou, China" 
 
 # Intrigued by the world outside of China
-
+--
 ## Denver, Colorado, United States
 On Dec 27, 2007, the first time I landed in Denver, US -- the amazing Mile-High city, sunny, snowy. I spent over a year during the three years with my second employer, when I had better chances to experience the American life and working style as well as opportunities to work some nice people. 
 
