@@ -13,7 +13,7 @@ WhyPush Notific">
 <meta property="og:site_name" content="/home/mattshen">
 <meta property="og:description" content="WhatIt’s an article about my own experience implementing Push Notification in react-native for both platforms. It contains the tools and libraries I picked and pitfalls I encountered. 
 WhyPush Notific">
-<meta property="og:updated_time" content="2017-04-06T01:41:54.000Z">
+<meta property="og:updated_time" content="2017-04-06T05:41:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native Push Notifications">
 <meta name="twitter:description" content="WhatIt’s an article about my own experience implementing Push Notification in react-native for both platforms. It contains the tools and libraries I picked and pitfalls I encountered. 
@@ -75,6 +75,8 @@ ga('send', 'pageview');
                 
                     <a class="main-nav-link" href="/about">About</a>
                 
+                    <a class="main-nav-link" href="/topics">Topics</a>
+                
             </nav>
             
                 
@@ -135,6 +137,8 @@ ga('send', 'pageview');
                     <td><a class="main-nav-link" href="https://github.com/mattshen">GitHub</a></td>
                 
                     <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                    <td><a class="main-nav-link" href="/topics">Topics</a></td>
                 
                 <td>
                     
@@ -274,6 +278,7 @@ ga('send', 'pageview');
 <h3 id="3-Launching-App-from-cold-state-and-get-the-initial-notification"><a href="#3-Launching-App-from-cold-state-and-get-the-initial-notification" class="headerlink" title="3. Launching App from cold state and get the initial notification"></a>3. Launching App from cold state and get the initial notification</h3><p><strong>iOS</strong>. Natively supported even in react-native <code>PushNotificationIOS</code>. Only problem is you cannot get the initial notification if App is launched from the icon. </p>
 <p><strong>Android</strong>. <code>react-native-notifications</code> provides a similar implementation just like the iOS one. So far I haven’t found any problem with it. Also, you cannot get the initial notification if launching App from the icon. </p>
 <h3 id="4-Background-vs-Foreground-Notification"><a href="#4-Background-vs-Foreground-Notification" class="headerlink" title="4. Background vs Foreground Notification"></a>4. Background vs Foreground Notification</h3><p><strong>iOS</strong>. Server side has to include <code>&quot;content-available&quot;: 1</code> in the JSON message, otherwise your post-notification processing code won’t be called in background e.g.<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">"aps"</span>:&#123;<span class="attr">"content-available"</span>:<span class="number">1</span>&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>See more details <a href="https://medium.com/posts-from-emmerge/ios-push-notification-background-fetch-demystified-7090358bb66e" target="_blank" rel="external">here</a></p>
 <p><strong>Android</strong>. Notification are even fired when app is in foreground by default. You probably want to write your own logic to block foreground firing. Here is what I did (with <code>react-native-notifications</code>):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">postNotification</span><span class="params">(<span class="keyword">int</span> id, Notification notification)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!mAppLifecycleFacade.isAppVisible()) &#123;</div><div class="line">        <span class="keyword">final</span> NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);</div><div class="line">        notificationManager.notify(id, notification);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="5-Badge-Challenge"><a href="#5-Badge-Challenge" class="headerlink" title="5. Badge Challenge"></a>5. Badge Challenge</h3><p><strong>Android</strong>.  Badging is not a standard Android feature, but the major phone maker all did their own implementations, Samsung, HTC, Huawei, etc. There is a very good library in github – <a href="https://github.com/leolin310148/ShortcutBadger" target="_blank" rel="external">ShortcutBadger</a>. You need write a react-native module to call some APIs. </p>
 <p><strong>iOS</strong>. It’s quite a pain till the time I write this article. The badge is controlled by <code>&quot;content-available&quot;: 1</code> when the App is cold (aka killed or not launched). If you write your own provider, you have the control. But if notification is from some SaaS service, you have to rely on whether they send it to you or not.  </p>
@@ -289,7 +294,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://www.mattshen.com/2017/04/05/React-Native-Push-Notifications/" data-id="cj15qm0g80004dv1pwio0dps3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.mattshen.com/2017/04/05/React-Native-Push-Notifications/" data-id="cj3p9vgkl0006wp1p1ah6tchs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
