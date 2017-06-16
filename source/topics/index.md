@@ -4,7 +4,7 @@ layout: "page"
 
 
 ## Linux Server Provisioning
----
+-----
 * [Disable SSH Login for a root user]()
 Add following line to file: `/etc/ssh/sshd_config`, then `sudo service ssh restart`
 ```
@@ -18,10 +18,10 @@ PermitRootLogin no
 * [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ## Network Administration
---
+-----
 * [UNIX / Linux: 10 Netstat Command Examples](http://www.thegeekstuff.com/2010/03/netstat-command-examples)
 
 
 ## Programming
----
+-----
 * [Awesome Nodejs](https://github.com/sindresorhus/awesome-nodejs)
