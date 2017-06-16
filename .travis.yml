@@ -8,8 +8,8 @@ branches:
 install: npm install
 
 before_script:
-- git config --global user.name "Matt Shen"
-- git config --global user.email "lovelywib@gmail.com"
+- git config --global user.name "hexo deployer"
+- git config --global user.email "hexo-deployer-lovelywib@gmail.com"
 - sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
 
 script:
