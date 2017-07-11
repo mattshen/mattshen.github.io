@@ -28,3 +28,6 @@ PermitRootLogin no
 -----
 * [Awesome Nodejs](https://github.com/sindresorhus/awesome-nodejs)
 * [A quick nodejs + reactjs webapp](https://daveceddia.com/create-react-app-express-backend/)
+
+## App Building Blocks
+* [How to build chat into app](http://thinkapps.com/blog/development/how-to-build-chat-into-app/)
