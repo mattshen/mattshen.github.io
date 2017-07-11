@@ -3,7 +3,9 @@ layout: "page"
 ---
 
 
-## Linux Server Provisioning
+## Server Administration
+-------
+### Linux Server Provisioning
 -----
 * [Disable SSH Login for a root user]()
 Add following line to file: `/etc/ssh/sshd_config`, then `sudo service ssh restart`
@@ -19,15 +21,17 @@ PermitRootLogin no
 * [How To Set Up a Node.js Application for Production on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04)
 * [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) in Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
 
-## Network Administration
+### Network Administration
 -----
 * [UNIX / Linux: 10 Netstat Command Examples](http://www.thegeekstuff.com/2010/03/netstat-command-examples)
 
 
-## Programming
+## Making Systems
+------
+### Programming
 -----
 * [Awesome Nodejs](https://github.com/sindresorhus/awesome-nodejs)
 * [A quick nodejs + reactjs webapp](https://daveceddia.com/create-react-app-express-backend/)
 
-## App Building Blocks
+### App Building Blocks
 * [How to build chat into app](http://thinkapps.com/blog/development/how-to-build-chat-into-app/)
