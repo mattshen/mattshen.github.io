@@ -1,6 +1,8 @@
 ---
 title: the n+1 query problem
-tags: FP, IO
+tags: 
+  - FP
+  - IO
 ---
 
 # The problem
