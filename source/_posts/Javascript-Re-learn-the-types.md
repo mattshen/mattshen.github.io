@@ -9,9 +9,9 @@ comments: true
 date: 2017-03-20 10:02:00
 ---
 
-
-# The reason
 This is the first post of a series of Javascript re-learn posts. Why am I writing it when there are some many similar stuff out on Internet? If there has to be a reason, the first one would be to review my knowledge on Javascript and hopefully I can get some level of "学而时习之,可以为师矣".
+
+<!-- more -->
 
 # Types
 One of the best ways to learn a programming language is to think like I'm going to design it. 

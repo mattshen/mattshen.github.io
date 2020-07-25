@@ -10,9 +10,9 @@ comments: true
 date: 2017-04-05 20:00:00
 ---
 
-
-# What
 It's an article about my own experience implementing Push Notification in react-native for both platforms. It contains the tools and libraries I picked and pitfalls I encountered. 
+
+<!-- more -->
 
 # Why
 Push Notification looks simple, but actually it carries some complexities when putting it in use. There is quite a list of pitfalls for both platforms as well. 

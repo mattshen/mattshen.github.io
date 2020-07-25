@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: /home/mattshen
-subtitle: Self-entertaining Place
-description: Writings about my software engineering philosophy
-author: Matt Shen <lovelywib@gmail.com>
+title: Software Engineering Notes
+subtitle: Software Engineering Notes
+description: Software Engineering Notes
+author: Matt Shen
 language: en
 timezone: Australia/Sydney
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: cafe
+theme: even
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -13,6 +13,8 @@ date: 2017-06-19 00:00:00
 
 This is a guide to simply setup Hexo auto-deployment to github pages by Travis-CLI. 
 
+<!-- more -->
+
 # Goals
 ---
 * Every time a post is modified or added via github web UI, Travis-CLI would rebuild the whole github page site
