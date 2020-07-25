@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Simple Guide to Automatically Deploy Hexo Powered Blog by Travis-CLI"><meta name="keywords" content="Hexo, CI, Travis-CLI, Software Engineering Notes"><link rel="alternate" href="/default" title="Software Engineering Notes"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="https://www.mattshen.com/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93955436-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93955436-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Simple Guide to Automatically Deploy Hexo Powered Blog by Travis-CLI - Software Engineering Notes</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Software Engineering Notes</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Software Engineering Notes</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Simple Guide to Automatically Deploy Hexo Powered Blog by Travis-CLI
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-06-19
+        </span><span class="post-category">
+            <a href="/categories/Continuous-Integration/">Continuous Integration</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Goals"><span class="toc-text">Goals</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Setup"><span class="toc-text">The Setup</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-configuration-file-travis-yml"><span class="toc-text">The configuration file .travis.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Give-Travis-Access-to-commit-generated-files-to-the-github’s-master-branch"><span class="toc-text">Give Travis Access to commit generated files to the github’s master branch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test"><span class="toc-text">Test</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#End"><span class="toc-text">End</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>This is a guide to simply setup Hexo auto-deployment to github pages by Travis-CLI. </p>
+<a id="more"></a>
+<h1 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h1><hr>
+<ul>
+<li>Every time a post is modified or added via github web UI, Travis-CLI would rebuild the whole github page site</li>
+<li>Let Travis-CLI to re-generate Hexo posts and pages</li>
+<li>Let Travis-CLI deploy generated posts and pages to github pages</li>
+<li>Keep sensitive information (here it would be the github personal token) away from public</li>
+</ul>
+<h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h1><hr>
+<ul>
+<li>A Github repository with source branch (Hexo project) and master branch (github pages). Here is how it looks like: </li>
+</ul>
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/github_source_branch.png" title="Github Repository Source Branch">
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/github_master_branch.png" title="Github Repository Master Branch">
+<ul>
+<li>Login Travis-CLI via github account, and allow Travis to access the github repository. </li>
+</ul>
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/travis-access-to-github-repo.png" title="Github Travis Access To Github Repo">
+<h1 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h1><hr>
+<h2 id="The-configuration-file-travis-yml"><a href="#The-configuration-file-travis-yml" class="headerlink" title="The configuration file .travis.yml"></a>The configuration file <code>.travis.yml</code></h2><p><code>.travis.yml</code> is the file to let Travis know how to build the project. Create one and put it in <code>source</code> branch of the git repository</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">stable</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line"><span class="attr">  only:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">source</span></span><br><span class="line"></span><br><span class="line"><span class="attr">install:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line"><span class="attr">before_script:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.name</span> <span class="string">"hexo deployer"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.email</span> <span class="string">"hexo-deployer-lovelywib@gmail.com"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">sed</span> <span class="bullet">-i</span> <span class="string">"s/__GITHUB_TOKEN__/$&#123;__GITHUB_TOKEN__&#125;/"</span> <span class="string">_config.yml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure>
+<p>NOTE: We will add <code>__GITHUB_TOKEN__</code> environment variable later in Travis</p>
+<h2 id="Give-Travis-Access-to-commit-generated-files-to-the-github’s-master-branch"><a href="#Give-Travis-Access-to-commit-generated-files-to-the-github’s-master-branch" class="headerlink" title="Give Travis Access to commit generated files to the github’s master branch"></a>Give Travis Access to commit generated files to the github’s master branch</h2><ol>
+<li>Modify Hexo <code>_config.yml</code> deploy URL by adding the <code>__GITHUB_TOKEN__</code> string. Here is what it looks like: </li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://__GITHUB_TOKEN__@github.com/mattshen/mattshen.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>Generate Github Personal access token from github –&gt; personal setting –&gt; Personal access tokens</li>
+</ol>
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/github_personal_token.png" title="Github Github Personal Token">
+<p>NOTE: make sure it has “repo” scope ticked. </p>
+<ol>
+<li>Copy the generated token, then create it as environment variable in Travis using name <code>__GITHUB_TOKEN__</code>. Here is how it looks like: </li>
+</ol>
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/travis-env-vars.png" title="Travis Environment Variables">
+<p>NOTE: make sure <strong>Display Value in build log</strong> is off, otherwise the secret personal token would be revealed in the build log which is visible to everyone.</p>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>Changes Any file in <code>source</code> branch would trigger a Travis build. </p>
+<img src="/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/travis-builds.png" title="Travis Builds">
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>After this setup, Travis would be triggered by changes committed to <code>source</code> branch, and start building according to <code>.travis.yml</code>. </p>
+<p>Have fun with Travis and Hexo Blogging. :)</p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://www.mattshen.com">Matt Shen</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.mattshen.com/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/">https://www.mattshen.com/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Hexo/">Hexo</a>
+            <a href="/tags/CI/">CI</a>
+            <a href="/tags/Travis-CLI/">Travis-CLI</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2017/04/05/React-Native-Push-Notifications/">
+        <span class="next-text nav-default">React Native Push Notifications</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="https://github.com/mattshen" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Matt Shen</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://www.mattshen.com/2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/';
+        this.page.identifier = '2017/06/19/Simple-Guide-to-Automatically-Deploy-Hexo-Powered-Blog-by-Travis-CLI/';
+        this.page.title = 'Simple Guide to Automatically Deploy Hexo Powered Blog by Travis-CLI';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//personal-blog-7.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
